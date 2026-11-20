@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BrowseRouteImport } from './routes/browse'
+import { Route as DonateRouteImport } from './routes/donate'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as ItemsIdRouteImport } from './routes/items/$id'
+import { Route as ManageTokenRouteImport } from './routes/manage/$token'
+import { Route as ReportFoundRouteImport } from './routes/report/found'
+import { Route as ReportLostRouteImport } from './routes/report/lost'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrowseRoute = BrowseRouteImport.update({
+  id: '/browse',
+  path: '/browse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DonateRoute = DonateRouteImport.update({
+  id: '/donate',
+  path: '/donate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ItemsIdRoute = ItemsIdRouteImport.update({
+  id: '/items/$id',
+  path: '/items/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManageTokenRoute = ManageTokenRouteImport.update({
+  id: '/manage/$token',
+  path: '/manage/$token',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportFoundRoute = ReportFoundRouteImport.update({
+  id: '/report/found',
+  path: '/report/found',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportLostRoute = ReportLostRouteImport.update({
+  id: '/report/lost',
+  path: '/report/lost',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/browse': typeof BrowseRoute
+  '/donate': typeof DonateRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/items/$id': typeof ItemsIdRoute
+  '/manage/$token': typeof ManageTokenRoute
+  '/report/found': typeof ReportFoundRoute
+  '/report/lost': typeof ReportLostRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/browse': typeof BrowseRoute
+  '/donate': typeof DonateRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/items/$id': typeof ItemsIdRoute
+  '/manage/$token': typeof ManageTokenRoute
+  '/report/found': typeof ReportFoundRoute
+  '/report/lost': typeof ReportLostRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/browse': typeof BrowseRoute
+  '/donate': typeof DonateRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/items/$id': typeof ItemsIdRoute
+  '/manage/$token': typeof ManageTokenRoute
+  '/report/found': typeof ReportFoundRoute
+  '/report/lost': typeof ReportLostRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/browse'
+    | '/donate'
+    | '/how-it-works'
+    | '/items/$id'
+    | '/manage/$token'
+    | '/report/found'
+    | '/report/lost'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/browse'
+    | '/donate'
+    | '/how-it-works'
+    | '/items/$id'
+    | '/manage/$token'
+    | '/report/found'
+    | '/report/lost'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/browse'
+    | '/donate'
+    | '/how-it-works'
+    | '/items/$id'
+    | '/manage/$token'
+    | '/report/found'
+    | '/report/lost'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BrowseRoute: typeof BrowseRoute
+  DonateRoute: typeof DonateRoute
+  HowItWorksRoute: typeof HowItWorksRoute
+  ItemsIdRoute: typeof ItemsIdRoute
+  ManageTokenRoute: typeof ManageTokenRoute
+  ReportFoundRoute: typeof ReportFoundRoute
+  ReportLostRoute: typeof ReportLostRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/browse': {
+      id: '/browse'
+      path: '/browse'
+      fullPath: '/browse'
+      preLoaderRoute: typeof BrowseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/donate': {
+      id: '/donate'
+      path: '/donate'
+      fullPath: '/donate'
+      preLoaderRoute: typeof DonateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/items/$id': {
+      id: '/items/$id'
+      path: '/items/$id'
+      fullPath: '/items/$id'
+      preLoaderRoute: typeof ItemsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/manage/$token': {
+      id: '/manage/$token'
+      path: '/manage/$token'
+      fullPath: '/manage/$token'
+      preLoaderRoute: typeof ManageTokenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/report/found': {
+      id: '/report/found'
+      path: '/report/found'
+      fullPath: '/report/found'
+      preLoaderRoute: typeof ReportFoundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/report/lost': {
+      id: '/report/lost'
+      path: '/report/lost'
+      fullPath: '/report/lost'
+      preLoaderRoute: typeof ReportLostRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BrowseRoute: BrowseRoute,
+  DonateRoute: DonateRoute,
+  HowItWorksRoute: HowItWorksRoute,
+  ItemsIdRoute: ItemsIdRoute,
+  ManageTokenRoute: ManageTokenRoute,
+  ReportFoundRoute: ReportFoundRoute,
+  ReportLostRoute: ReportLostRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
